@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './App.css';
-import person from './Person/Person';
+import Radium from 'radium';
 import Person from './Person/Person';
 class App extends Component {
   state={
@@ -28,7 +28,10 @@ class App extends Component {
 render(){
   const style={
     backgroundColor:'white',
-    cursor:'pointer'
+    cursor:'pointer',
+    ':hover':{
+      backgroundColor:'green'
+    }
   };
  if(!this.state.showPersons){
   style.backgroundColor='red'
@@ -50,4 +53,4 @@ render(){
 }
 }
 
-export default App;
+export default Radium(App);
