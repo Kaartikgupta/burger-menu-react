@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './App.css';
+import person from './Person/Person';
 import Person from './Person/Person';
 class App extends Component {
   state={
@@ -25,10 +26,18 @@ class App extends Component {
   }
 
 render(){
+  const style={
+    backgroundColor:'white',
+    cursor:'pointer'
+  };
+ if(!this.state.showPersons){
+  style.backgroundColor='red'
+ }
+
   return (
     <div className="App">
      <h1> hello, this is kaartik gupta</h1>
-     <button onClick={this.toggleHandler}>click me!</button>
+     <button style={style} onClick={this.toggleHandler}>click me!</button>
         { this.state.showPersons?
           <div>
           <Person name={this.state.persons[0].name}/>
